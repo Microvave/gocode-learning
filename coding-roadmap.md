@@ -37,7 +37,7 @@
 - [x] functions, return values
 - [x] if/else, for loops
 - [x] arrays, slices, maps
-- [ ] structs, methods
+- [x] structs, methods
 - [ ] interfaces
 - [ ] error handling
 - [ ] packages, imports
@@ -177,6 +177,7 @@ github.com/[username]/
 | 2026-05-27 | 02:53 | Lesson 2: functions, return values | ✅ เสร็จแล้ว |
 | 2026-05-27 | 02:57 | Lesson 3: if/else, for loops | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:00 | Lesson 4: arrays, slices, maps | ✅ เสร็จแล้ว |
+| 2026-05-27 | 03:10 | Lesson 5: structs, methods | ✅ เสร็จแล้ว |
 |  |  |  |  |
 
 ---
