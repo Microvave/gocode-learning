@@ -38,7 +38,7 @@
 - [x] if/else, for loops
 - [x] arrays, slices, maps
 - [x] structs, methods
-- [ ] interfaces
+- [x] interfaces
 - [ ] error handling
 - [ ] packages, imports
 
@@ -178,6 +178,7 @@ github.com/[username]/
 | 2026-05-27 | 02:57 | Lesson 3: if/else, for loops | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:00 | Lesson 4: arrays, slices, maps | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:10 | Lesson 5: structs, methods | ✅ เสร็จแล้ว |
+| 2026-05-27 | 03:20 | Lesson 6: interfaces | ✅ เสร็จแล้ว |
 |  |  |  |  |
 
 ---
