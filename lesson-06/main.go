@@ -37,12 +37,12 @@ type Duck struct {
 func (d Duck) Sound() string { return "ก้าก!" }
 func (d Duck) Name() string  { return d.TheName }
 
-type Brid struct {
+type Bird struct {
 	TheName string
 }
 
-func (b Brid) Sound() string { return "จุกกรู" }
-func (b Brid) Name() string  { return b.TheName }
+func (b Bird) Sound() string { return "จุกกรู" }
+func (b Bird) Name() string  { return b.TheName }
 
 // ==========================================
 // ประโยชน์ของ Interface — รับ type อะไรก็ได้
@@ -64,7 +64,7 @@ func main() {
 	dog := Dog{TheName: "บัดดี้"}
 	cat := Cat{TheName: "วิสกี้"}
 	duck := Duck{TheName: "โดนัลด์"}
-	brid := Brid{TheName: "ก้อน"}
+	brid := Bird{TheName: "ก้อน"}
 	// เรียกตรงๆ
 	Describe(dog)
 	Describe(cat)
