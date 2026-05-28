@@ -40,7 +40,7 @@
 - [x] structs, methods
 - [x] interfaces
 - [x] error handling
-- [ ] packages, imports
+- [x] packages, imports
 
 ### สัปดาห์ 3-4: LeetCode Easy เริ่มต้น
 - [ ] Arrays (เป้า 10 ข้อ)
@@ -107,7 +107,7 @@
 | 1 | 2026-05-27 | Lesson 5: structs, methods | ✅ |
 | 1 | 2026-05-27 | Lesson 6: interfaces | ✅ |
 | 2 | 2026-05-28 | Lesson 7: error handling | ✅ |
-| 2 | 2026-05-28 | Lesson 8: packages, imports | ⬜ |
+| 2 | 2026-05-28 | Lesson 8: packages, imports | ✅ |
 | 6 | 2026-06-01 | ทบทวน Lesson 1-8 + Mini Quiz | ⬜ |
 | 7 | 2026-06-02 | พัก / ทบทวนถ้ายังงง | ⬜ |
 | 8 | 2026-06-03 | LeetCode Easy: Two Sum, Valid Anagram | ⬜ |
@@ -180,6 +180,7 @@ github.com/[username]/
 | 2026-05-27 | 03:10 | Lesson 5: structs, methods | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:20 | Lesson 6: interfaces | ✅ เสร็จแล้ว |
 | 2026-05-28 | 03:30 | Lesson 7: error handling | ✅ เสร็จแล้ว |
+| 2026-05-28 | 15:12 | Lesson 8: packages, imports | ✅ เสร็จแล้ว |
 |  |  |  |  |
 
 ---
