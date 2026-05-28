@@ -39,7 +39,7 @@
 - [x] arrays, slices, maps
 - [x] structs, methods
 - [x] interfaces
-- [ ] error handling
+- [x] error handling
 - [ ] packages, imports
 
 ### สัปดาห์ 3-4: LeetCode Easy เริ่มต้น
@@ -179,6 +179,7 @@ github.com/[username]/
 | 2026-05-27 | 03:00 | Lesson 4: arrays, slices, maps | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:10 | Lesson 5: structs, methods | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:20 | Lesson 6: interfaces | ✅ เสร็จแล้ว |
+| 2026-05-28 | - | Lesson 7: error handling | ✅ เสร็จแล้ว |
 |  |  |  |  |
 
 ---
