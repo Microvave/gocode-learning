@@ -104,10 +104,10 @@
 | 1 | 2026-05-27 | Lesson 2: functions, return values | ✅ |
 | 1 | 2026-05-27 | Lesson 3: if/else, for loops | ✅ |
 | 1 | 2026-05-27 | Lesson 4: arrays, slices, maps | ✅ |
-| 2 | 2026-05-28 | Lesson 5: structs, methods | ⬜ |
-| 3 | 2026-05-29 | Lesson 6: interfaces | ⬜ |
-| 4 | 2026-05-30 | Lesson 7: error handling | ⬜ |
-| 5 | 2026-05-31 | Lesson 8: packages, imports | ⬜ |
+| 1 | 2026-05-27 | Lesson 5: structs, methods | ✅ |
+| 1 | 2026-05-27 | Lesson 6: interfaces | ✅ |
+| 2 | 2026-05-28 | Lesson 7: error handling | ✅ |
+| 2 | 2026-05-28 | Lesson 8: packages, imports | ⬜ |
 | 6 | 2026-06-01 | ทบทวน Lesson 1-8 + Mini Quiz | ⬜ |
 | 7 | 2026-06-02 | พัก / ทบทวนถ้ายังงง | ⬜ |
 | 8 | 2026-06-03 | LeetCode Easy: Two Sum, Valid Anagram | ⬜ |
@@ -179,7 +179,7 @@ github.com/[username]/
 | 2026-05-27 | 03:00 | Lesson 4: arrays, slices, maps | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:10 | Lesson 5: structs, methods | ✅ เสร็จแล้ว |
 | 2026-05-27 | 03:20 | Lesson 6: interfaces | ✅ เสร็จแล้ว |
-| 2026-05-28 | - | Lesson 7: error handling | ✅ เสร็จแล้ว |
+| 2026-05-28 | 03:30 | Lesson 7: error handling | ✅ เสร็จแล้ว |
 |  |  |  |  |
 
 ---
