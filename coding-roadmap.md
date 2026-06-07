@@ -185,13 +185,15 @@ github.com/[username]/
 | 2026-05-30 | - | LeetCode #2: Valid Anagram | ✅ เสร็จแล้ว |
 | 2026-06-04 | - | LeetCode #3: Contains Duplicate | ✅ ใช้ map[int]bool เป็นสมุดจด |
 | 2026-06-04 | - | LeetCode #4: Best Time to Buy/Sell Stock | ✅ จำ minPrice + maxProfit ระหว่าง loop |
+| 2026-06-05 | - | LeetCode #5: Reverse String | ✅ Two Pointers สลับในตัว |
+| 2026-06-05 | - | LeetCode #6: First Unique Character | ✅ นับด้วย map แล้ววนหา count==1 |
 |  |  |  |  |
 
 ---
 
 ## LeetCode Tracker
 
-### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 4/50
+### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 6/50
 
 | # | ชื่อข้อ | วันที่ | หมายเหตุ |
 |---|---------|--------|----------|
@@ -199,6 +201,8 @@ github.com/[username]/
 | 2 | Valid Anagram | 2026-05-30 | ✅ ใช้ HashMap นับตัวอักษร |
 | 3 | Contains Duplicate | 2026-06-04 | ✅ ใช้ map[int]bool เช็คตัวซ้ำ |
 | 4 | Best Time to Buy/Sell Stock | 2026-06-04 | ✅ จำ minPrice + maxProfit (1 pass) |
+| 5 | Reverse String | 2026-06-05 | ✅ Two Pointers สลับในตัว |
+| 6 | First Unique Character | 2026-06-05 | ✅ นับด้วย map แล้ววนหา count==1 |
 
 ### Medium (เป้า 80 ข้อ) — ทำไปแล้ว: 0/80
 
