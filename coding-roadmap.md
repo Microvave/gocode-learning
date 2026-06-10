@@ -188,13 +188,14 @@ github.com/[username]/
 | 2026-06-05 | - | LeetCode #5: Reverse String | ✅ Two Pointers สลับในตัว |
 | 2026-06-05 | - | LeetCode #6: First Unique Character | ✅ นับด้วย map แล้ววนหา count==1 |
 | 2026-06-06 | - | LeetCode #7: Palindrome Number | ✅ กลับเลขด้วยเลขคณิต (% และ /) |
+| 2026-06-10 | - | LeetCode #8: Fibonacci Number | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
 |  |  |  |  |
 
 ---
 
 ## LeetCode Tracker
 
-### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 7/50
+### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 8/50
 
 | # | ชื่อข้อ | วันที่ | หมายเหตุ |
 |---|---------|--------|----------|
@@ -205,6 +206,7 @@ github.com/[username]/
 | 5 | Reverse String | 2026-06-05 | ✅ Two Pointers สลับในตัว |
 | 6 | First Unique Character | 2026-06-05 | ✅ นับด้วย map แล้ววนหา count==1 |
 | 7 | Palindrome Number | 2026-06-06 | ✅ กลับเลขด้วยเลขคณิต (% และ /) |
+| 8 | Fibonacci Number | 2026-06-10 | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
 
 ### Medium (เป้า 80 ข้อ) — ทำไปแล้ว: 0/80
 
