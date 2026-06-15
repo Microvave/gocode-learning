@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeetCode Easy — 10 ข้อแรก | Microwave</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a5f, #0ea5e9);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; font-weight: 700; }
+    header p  { color: #bae6fd; margin-top: 8px; font-size: 1rem; }
+
+    .progress-bar-wrap {
+      background: #1e293b;
+      padding: 24px;
+      text-align: center;
+    }
+    .progress-label { font-size: 1.1rem; margin-bottom: 10px; color: #94a3b8; }
+    .bar-outer {
+      background: #334155;
+      border-radius: 999px;
+      height: 18px;
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .bar-inner {
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+      height: 100%;
+      width: 20%;
+      border-radius: 999px;
+      transition: width 1s;
+    }
+
+    .pattern-section {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 24px;
+      justify-content: center;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+    }
+    .badge {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+    .badge span { color: #38bdf8; font-weight: 600; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 32px 16px; }
+
+    .problem-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      border-bottom: 1px solid #334155;
+    }
+    .num {
+      background: #0ea5e9;
+      color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .card-header h2 { font-size: 1.15rem; font-weight: 600; }
+    .pattern-tag {
+      margin-left: auto;
+      background: #0c4a6e;
+      color: #38bdf8;
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .card-body { padding: 20px 24px; }
+
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #64748b;
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+    .section-label:first-child { margin-top: 0; }
+
+    .problem-desc {
+      background: #0f172a;
+      border-left: 3px solid #0ea5e9;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
+    }
+
+    .example-box {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      color: #a5f3fc;
+    }
+
+    .thinking-box {
+      background: #1a2744;
+      border: 1px solid #1d4ed8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: #bfdbfe;
+    }
+    .thinking-box li { margin-left: 20px; margin-top: 4px; }
+
+    pre {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    code { color: #e2e8f0; font-family: 'Cascadia Code', 'Fira Code', monospace; }
+    .kw  { color: #c084fc; }
+    .fn  { color: #60a5fa; }
+    .str { color: #4ade80; }
+    .cm  { color: #64748b; font-style: italic; }
+    .num-c { color: #fb923c; }
+
+    .complexity {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .comp-box {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+    }
+    .comp-box .label { color: #64748b; font-size: 0.75rem; }
+    .comp-box .value { color: #f59e0b; font-weight: 600; }
+
+    .key-insight {
+      background: #14532d;
+      border: 1px solid #166534;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      color: #bbf7d0;
+      margin-top: 8px;
+    }
+    .key-insight::before { content: "💡 "; }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #475569;
+      font-size: 0.85rem;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>LeetCode Easy — 10 ข้อแรก</h1>
+  <p>Microwave · เส้นทางสู่ Google & Agoda · Go Language</p>
+</header>
+
+<div class="progress-bar-wrap">
+  <div class="progress-label">ความคืบหน้า: 10 / 50 ข้อ (20%)</div>
+  <div class="bar-outer"><div class="bar-inner"></div></div>
+</div>
+
+<div class="pattern-section">
+  <div class="badge">Pattern ที่เรียนไปแล้ว:</div>
+  <div class="badge"><span>HashMap Lookup</span></div>
+  <div class="badge"><span>HashMap Count</span></div>
+  <div class="badge"><span>Two Pointers</span></div>
+  <div class="badge"><span>Greedy / 1-Pass</span></div>
+  <div class="badge"><span>Math / Modulo</span></div>
+  <div class="badge"><span>Loop DP</span></div>
+  <div class="badge"><span>Helper Function</span></div>
+</div>
+
+<main>
+
+  <!-- #1 Two Sum -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">1</div>
+      <h2>Two Sum</h2>
+      <div class="pattern-tag">HashMap Lookup</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        ให้ array ของตัวเลข และ target — หา index ของเลข 2 ตัวที่บวกกันแล้วได้ target
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        Input:  nums = [2, 7, 11, 15], target = 9<br>
+        Output: [0, 1]  → เพราะ nums[0] + nums[1] = 2 + 7 = 9
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>สร้าง map ว่าง (seen)</li>
+        <li>วนทุกตัว คำนวณ <b>need = target - num</b></li>
+        <li>ถ้า need อยู่ใน map → เจอคำตอบแล้ว!</li>
+        <li>ถ้าไม่มี → เก็บ seen[num] = i แล้ววนต่อ</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">twoSum</span>(nums []<span class="kw">int</span>, target <span class="kw">int</span>) []<span class="kw">int</span> {
+    seen := <span class="kw">map</span>[<span class="kw">int</span>]<span class="kw">int</span>{}
+
+    <span class="kw">for</span> i, num := <span class="kw">range</span> nums {
+        need := target - num
+
+        index, exists := seen[need]
+        <span class="kw">if</span> exists {
+            <span class="kw">return</span> []<span class="kw">int</span>{index, i}
+        }
+        seen[num] = i
+    }
+    <span class="kw">return</span> []<span class="kw">int</span>{}
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(n)</div></div>
+      </div>
+      <div class="key-insight">เช็คก่อน เก็บทีหลัง — pattern นี้ใช้บ่อยมาก!</div>
+    </div>
+  </div>
+
+  <!-- #2 Valid Anagram -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">2</div>
+      <h2>Valid Anagram</h2>
+      <div class="pattern-tag">HashMap Count</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        เช็คว่า string 2 ตัวเป็น Anagram กันไหม (ใช้ตัวอักษรเหมือนกันทุกตัว แค่สลับที่)
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        "anagram" และ "nagaram" → true<br>
+        "rat" และ "car" → false
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>วน s → เพิ่มนับ seen[ch]++</li>
+        <li>วน t → ลดนับ seen[ch]--</li>
+        <li>ถ้าทุก count เป็น 0 = anagram</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">isAnagram</span>(s <span class="kw">string</span>, t <span class="kw">string</span>) <span class="kw">bool</span> {
+    seen := <span class="kw">map</span>[<span class="kw">rune</span>]<span class="kw">int</span>{}
+
+    <span class="kw">for</span> _, ch := <span class="kw">range</span> s { seen[ch]++ }
+    <span class="kw">for</span> _, ch := <span class="kw">range</span> t { seen[ch]-- }
+
+    <span class="kw">for</span> _, count := <span class="kw">range</span> seen {
+        <span class="kw">if</span> count != <span class="num-c">0</span> { <span class="kw">return false</span> }
+    }
+    <span class="kw">return true</span>
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(n)</div></div>
+      </div>
+      <div class="key-insight">บวกจาก s ลบจาก t — ถ้าทุกช่องเป็น 0 แสดงว่าสมดุล = anagram</div>
+    </div>
+  </div>
+
+  <!-- #3 Contains Duplicate -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">3</div>
+      <h2>Contains Duplicate</h2>
+      <div class="pattern-tag">HashMap Lookup</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        เช็คว่า array มีเลขซ้ำกันไหม — ถ้ามีซ้ำ return true
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        [1, 2, 3, 1] → true<br>
+        [1, 2, 3, 4] → false
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>ใช้ map[int]bool เป็นสมุดจด</li>
+        <li>ถ้าเจอเลขที่อยู่ใน map แล้ว → ซ้ำ! return true</li>
+        <li>ถ้ายังไม่เคยเจอ → จดลง map</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">containsDuplicate</span>(nums []<span class="kw">int</span>) <span class="kw">bool</span> {
+    seen := <span class="kw">map</span>[<span class="kw">int</span>]<span class="kw">bool</span>{}
+
+    <span class="kw">for</span> _, num := <span class="kw">range</span> nums {
+        <span class="kw">if</span> seen[num] {
+            <span class="kw">return true</span>
+        }
+        seen[num] = <span class="kw">true</span>
+    }
+    <span class="kw">return false</span>
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(n)</div></div>
+      </div>
+      <div class="key-insight">map[int]bool ใช้ค่า false เป็น default — ถ้ายังไม่เคยใส่ seen[num] จะ return false อัตโนมัติ</div>
+    </div>
+  </div>
+
+  <!-- #4 Best Time to Buy and Sell Stock -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">4</div>
+      <h2>Best Time to Buy and Sell Stock</h2>
+      <div class="pattern-tag">Greedy / 1-Pass</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        ให้ array ราคาหุ้นแต่ละวัน — หากำไรสูงสุดที่ทำได้ (ซื้อก่อนขายทีหลัง)
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        [7, 1, 5, 3, 6, 4] → 5  (ซื้อวันที่ 2 ราคา 1 ขายวันที่ 5 ราคา 6)<br>
+        [7, 6, 4, 3, 1]    → 0  (ราคาลงตลอด ไม่ซื้อ)
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>จำ minPrice (ราคาต่ำสุดที่เคยเห็น) ไว้ตลอด</li>
+        <li>ทุกวัน คำนวณกำไรถ้าขายวันนี้ = price - minPrice</li>
+        <li>อัปเดต maxProfit ถ้ากำไรวันนี้ดีกว่า</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">maxProfit</span>(prices []<span class="kw">int</span>) <span class="kw">int</span> {
+    minPrice := prices[<span class="num-c">0</span>]
+    maxProfit := <span class="num-c">0</span>
+
+    <span class="kw">for</span> _, price := <span class="kw">range</span> prices {
+        <span class="kw">if</span> price < minPrice {
+            minPrice = price
+        }
+        <span class="kw">if</span> price-minPrice > maxProfit {
+            maxProfit = price - minPrice
+        }
+    }
+    <span class="kw">return</span> maxProfit
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(1)</div></div>
+      </div>
+      <div class="key-insight">วนรอบเดียว จำแค่ 2 ค่า — minPrice กับ maxProfit ไม่ต้องใช้ map เลย</div>
+    </div>
+  </div>
+
+  <!-- #5 Reverse String -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">5</div>
+      <h2>Reverse String</h2>
+      <div class="pattern-tag">Two Pointers</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        กลับ []byte ในตัวมันเอง (in-place) ไม่ต้อง return
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        "hello" → "olleh"<br>
+        "Go"    → "oG"
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>ใช้ pointer 2 ตัว — left (ซ้าย) และ right (ขวา)</li>
+        <li>สลับ s[left] กับ s[right]</li>
+        <li>เลื่อน left++ และ right-- จนชนกัน</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">reverseString</span>(s []<span class="kw">byte</span>) {
+    left := <span class="num-c">0</span>
+    right := len(s) - <span class="num-c">1</span>
+
+    <span class="kw">for</span> left < right {
+        s[left], s[right] = s[right], s[left]
+        left++
+        right--
+    }
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(1)</div></div>
+      </div>
+      <div class="key-insight">Two Pointers สลับในตัว ไม่ต้องสร้าง array ใหม่ — ประหยัด memory</div>
+    </div>
+  </div>
+
+  <!-- #6 First Unique Character -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">6</div>
+      <h2>First Unique Character</h2>
+      <div class="pattern-tag">HashMap Count</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        หา index ของตัวอักษรตัวแรกที่ไม่ซ้ำใน string ถ้าไม่มีเลย return -1
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        "leetcode"     → 0  (l ไม่ซ้ำ และอยู่ตำแหน่งแรกสุด)<br>
+        "loveleetcode" → 2  (v)<br>
+        "aabb"         → -1
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>รอบ 1: วน s นับจำนวนแต่ละตัวอักษร count[ch]++</li>
+        <li>รอบ 2: วน s อีกครั้ง หาตัวแรกที่ count[ch] == 1</li>
+        <li>return index นั้น ถ้าไม่เจอ return -1</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">firstUniqChar</span>(s <span class="kw">string</span>) <span class="kw">int</span> {
+    count := <span class="kw">map</span>[<span class="kw">rune</span>]<span class="kw">int</span>{}
+
+    <span class="kw">for</span> _, ch := <span class="kw">range</span> s { count[ch]++ }
+
+    <span class="kw">for</span> i, ch := <span class="kw">range</span> s {
+        <span class="kw">if</span> count[ch] == <span class="num-c">1</span> { <span class="kw">return</span> i }
+    }
+    <span class="kw">return</span> -<span class="num-c">1</span>
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(n)</div></div>
+      </div>
+      <div class="key-insight">วน 2 รอบ — รอบแรกนับ รอบสองหา ต้องรักษาลำดับจึงวน string ใหม่</div>
+    </div>
+  </div>
+
+  <!-- #7 Palindrome Number -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">7</div>
+      <h2>Palindrome Number</h2>
+      <div class="pattern-tag">Math / Modulo</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        เช็คว่าตัวเลขอ่านหน้า-หลังเหมือนกันไหม (โดยไม่แปลงเป็น string)
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        121  → true<br>
+        -121 → false  (เลขติดลบ)<br>
+        10   → false
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>เลขติดลบ → false ได้เลย</li>
+        <li>ดึงหลักสุดท้าย: digit = x % 10</li>
+        <li>สร้างเลขกลับด้าน: reversed = reversed*10 + digit</li>
+        <li>ตัดหลักสุดท้ายทิ้ง: x = x / 10</li>
+        <li>เทียบ original กับ reversed</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">isPalindrome</span>(x <span class="kw">int</span>) <span class="kw">bool</span> {
+    <span class="kw">if</span> x < <span class="num-c">0</span> { <span class="kw">return false</span> }
+
+    original := x
+    reversed := <span class="num-c">0</span>
+
+    <span class="kw">for</span> x > <span class="num-c">0</span> {
+        digit := x % <span class="num-c">10</span>
+        reversed = reversed*<span class="num-c">10</span> + digit
+        x = x / <span class="num-c">10</span>
+    }
+    <span class="kw">return</span> original == reversed
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(log n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(1)</div></div>
+      </div>
+      <div class="key-insight">% 10 ดึงหลักสุดท้าย, / 10 ตัดหลักออก — สร้างเลขกลับด้านด้วยเลขคณิตล้วนๆ</div>
+    </div>
+  </div>
+
+  <!-- #8 Fibonacci -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">8</div>
+      <h2>Fibonacci Number</h2>
+      <div class="pattern-tag">Loop DP</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        คืนค่า Fibonacci ลำดับที่ n — F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2)
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        fib(4)  → 3   (0, 1, 1, 2, 3)<br>
+        fib(10) → 55
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>จำแค่ 2 ค่าล่าสุด a และ b</li>
+        <li>ทุกรอบ: a, b = b, a+b</li>
+        <li>วน n รอบ → a คือคำตอบ</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">fib</span>(n <span class="kw">int</span>) <span class="kw">int</span> {
+    a, b := <span class="num-c">0</span>, <span class="num-c">1</span>
+
+    <span class="kw">for</span> i := <span class="num-c">0</span>; i < n; i++ {
+        a, b = b, a+b
+    }
+    <span class="kw">return</span> a
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(1)</div></div>
+      </div>
+      <div class="key-insight">a, b = b, a+b — Go swap พร้อมกันในบรรทัดเดียว ไม่ต้องใช้ตัวแปรชั่วคราว</div>
+    </div>
+  </div>
+
+  <!-- #9 FizzBuzz -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">9</div>
+      <h2>FizzBuzz</h2>
+      <div class="pattern-tag">If/Else + Modulo</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        วน 1 ถึง n — หาร 3 → "Fizz", หาร 5 → "Buzz", หาร 15 → "FizzBuzz", นอกนั้น → ตัวเลข
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        n=5 → ["1", "2", "Fizz", "4", "Buzz"]<br>
+        n=15 → [..., "FizzBuzz"]
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>เช็ค % 15 ก่อนเสมอ (FizzBuzz ต้องมาก่อน)</li>
+        <li>แล้วค่อย % 3, % 5, และ default</li>
+        <li>append เข้า []string แล้ว return</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">fizzBuzz</span>(n <span class="kw">int</span>) []<span class="kw">string</span> {
+    result := []<span class="kw">string</span>{}
+
+    <span class="kw">for</span> i := <span class="num-c">0</span>; i < n; i++ {
+        <span class="kw">if</span> (i+<span class="num-c">1</span>)%<span class="num-c">15</span> == <span class="num-c">0</span> {
+            result = <span class="fn">append</span>(result, <span class="str">"FizzBuzz"</span>)
+        } <span class="kw">else if</span> (i+<span class="num-c">1</span>)%<span class="num-c">3</span> == <span class="num-c">0</span> {
+            result = <span class="fn">append</span>(result, <span class="str">"Fizz"</span>)
+        } <span class="kw">else if</span> (i+<span class="num-c">1</span>)%<span class="num-c">5</span> == <span class="num-c">0</span> {
+            result = <span class="fn">append</span>(result, <span class="str">"Buzz"</span>)
+        } <span class="kw">else</span> {
+            result = <span class="fn">append</span>(result, strconv.<span class="fn">Itoa</span>(i+<span class="num-c">1</span>))
+        }
+    }
+    <span class="kw">return</span> result
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(n)</div></div>
+      </div>
+      <div class="key-insight">ลำดับ if สำคัญมาก — FizzBuzz ต้องเช็คก่อน ไม่งั้นถูก Fizz หรือ Buzz ดักไว้</div>
+    </div>
+  </div>
+
+  <!-- #10 Count Primes -->
+  <div class="problem-card">
+    <div class="card-header">
+      <div class="num">10</div>
+      <h2>Count Primes</h2>
+      <div class="pattern-tag">Helper Function</div>
+    </div>
+    <div class="card-body">
+      <div class="section-label">โจทย์</div>
+      <div class="problem-desc">
+        นับจำนวน prime number ที่น้อยกว่า n
+      </div>
+      <div class="section-label">ตัวอย่าง</div>
+      <div class="example-box">
+        n=10 → 4  (2, 3, 5, 7)
+      </div>
+      <div class="section-label">วิธีคิด</div>
+      <div class="thinking-box">
+        <li>เขียน function isPrime(n) แยกออกมา</li>
+        <li>isPrime: วน j จาก 2 ถึง n-1 ถ้าหารลงตัว = ไม่ใช่ prime</li>
+        <li>countPrimes: วน i แล้วเรียก isPrime(i) นับ count</li>
+      </div>
+      <div class="section-label">โค้ด</div>
+      <pre><code><span class="kw">func</span> <span class="fn">isPrime</span>(n <span class="kw">int</span>) <span class="kw">bool</span> {
+    <span class="kw">for</span> j := <span class="num-c">2</span>; j < n; j++ {
+        <span class="kw">if</span> n%j == <span class="num-c">0</span> { <span class="kw">return false</span> }
+    }
+    <span class="kw">return true</span>
+}
+
+<span class="kw">func</span> <span class="fn">countPrimes</span>(n <span class="kw">int</span>) <span class="kw">int</span> {
+    count := <span class="num-c">0</span>
+    <span class="kw">for</span> i := <span class="num-c">2</span>; i < n; i++ {
+        <span class="kw">if</span> <span class="fn">isPrime</span>(i) { count++ }
+    }
+    <span class="kw">return</span> count
+}</code></pre>
+      <div class="section-label">Complexity</div>
+      <div class="complexity">
+        <div class="comp-box"><div class="label">Time</div><div class="value">O(n√n)</div></div>
+        <div class="comp-box"><div class="label">Space</div><div class="value">O(1)</div></div>
+      </div>
+      <div class="key-insight">แยก helper function ออกมาทำให้โค้ดอ่านง่าย — แนวคิดสำคัญในการเขียนโค้ดที่ดี</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Microwave · LeetCode Journey · เส้นทางสู่ Google & Agoda 🚀
+</footer>
+
+</body>
+</html>
