@@ -195,7 +195,7 @@ github.com/[username]/
 
 ## LeetCode Tracker
 
-### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 9/50
+### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 10/50
 
 | # | ชื่อข้อ | วันที่ | หมายเหตุ |
 |---|---------|--------|----------|
@@ -208,6 +208,7 @@ github.com/[username]/
 | 7 | Palindrome Number | 2026-06-06 | ✅ กลับเลขด้วยเลขคณิต (% และ /) |
 | 8 | Fibonacci Number | 2026-06-10 | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
 | 9 | FizzBuzz | 2026-06-12 | ✅ if/else 4 กรณี + strconv.Itoa |
+| 10 | Count Primes | 2026-06-16 | ✅ isPrime function + nested loop |
 
 ### Medium (เป้า 80 ข้อ) — ทำไปแล้ว: 0/80
 
