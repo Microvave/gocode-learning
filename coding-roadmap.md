@@ -1,7 +1,7 @@
 # แผนพัฒนาทักษะ Coding — เส้นทางสู่ Google & Agoda
 
-> **อัปเดตล่าสุด:** 2026-05-27
-> **สถานะปัจจุบัน:** Phase 1 — Lesson 2 (Functions)
+> **อัปเดตล่าสุด:** 2026-06-18
+> **สถานะปัจจุบัน:** เดือน 1 — LeetCode Easy 10/50 ✅
 
 ---
 
@@ -13,7 +13,7 @@
 | ภาษาหลัก | Go (เน้นหลัก), C# (สำรอง) |
 | เป้าหมาย | Google, Agoda |
 | Timeline | ค่อยๆ สะสม ไม่กำหนดตายตัว |
-| GitHub | ต้องสร้าง / กำลังสร้าง |
+| GitHub | https://github.com/Microvave/gocode-learning |
 
 ---
 
@@ -22,7 +22,7 @@
 > ⚠️ ต้องเรียน 2-3 ชั่วโมง/วัน สม่ำเสมอ
 
 ```
-เดือน 1  ██░░░░░░░░  Go พื้นฐาน + LeetCode Easy เริ่มต้น
+เดือน 1  ████████░░  Go พื้นฐาน ✅ + LeetCode Easy 10/50
 เดือน 2  ░░░░░░░░░░  LeetCode Easy ครบ 50 + DSA พื้นฐาน
 เดือน 3  ░░░░░░░░░░  LeetCode Medium + Backend Project
 เดือน 4  ░░░░░░░░░░  System Design + Mock Interview + สมัครงาน
@@ -43,9 +43,8 @@
 - [x] packages, imports
 
 ### สัปดาห์ 3-4: LeetCode Easy เริ่มต้น
-- [ ] Arrays (เป้า 10 ข้อ)
-- [ ] Strings (เป้า 10 ข้อ)
-- **รวมเป้า: 20 ข้อ**
+- [x] Arrays & Strings (10 ข้อแรก ✅)
+- **รวมทำแล้ว: 10/20 ข้อ**
 
 ---
 
@@ -110,13 +109,13 @@
 | 2 | 2026-05-28 | Lesson 8: packages, imports | ✅ |
 | 6 | 2026-06-01 | ทบทวน Lesson 1-8 + Mini Quiz | ⬜ |
 | 7 | 2026-06-02 | พัก / ทบทวนถ้ายังงง | ⬜ |
-| 8 | 2026-06-03 | LeetCode Easy: Two Sum, Valid Anagram | ⬜ |
-| 9 | 2026-06-04 | LeetCode Easy: Contains Duplicate, Best Time to Buy Stock | ⬜ |
-| 10 | 2026-06-05 | LeetCode Easy: Reverse String, First Unique Char | ⬜ |
-| 11 | 2026-06-06 | LeetCode Easy: Palindrome Number, Fibonacci | ⬜ |
-| 12 | 2026-06-07 | LeetCode Easy: FizzBuzz, Count Primes | ⬜ |
-| 13 | 2026-06-08 | LeetCode Easy: ทบทวนข้อที่ยาก + อธิบาย solution | ⬜ |
-| 14 | 2026-06-09 | สร้าง GitHub + push lesson 1-8 ขึ้น | ⬜ |
+| 8 | 2026-05-30 | LeetCode Easy: Two Sum, Valid Anagram | ✅ |
+| 9 | 2026-06-04 | LeetCode Easy: Contains Duplicate, Best Time to Buy Stock | ✅ |
+| 10 | 2026-06-05 | LeetCode Easy: Reverse String, First Unique Char | ✅ |
+| 11 | 2026-06-06 | LeetCode Easy: Palindrome Number | ✅ |
+| 12 | 2026-06-10 | LeetCode Easy: Fibonacci Number | ✅ |
+| 13 | 2026-06-12 | LeetCode Easy: FizzBuzz | ✅ |
+| 14 | 2026-06-16 | LeetCode Easy: Count Primes | ✅ |
 | 15-21 | สัปดาห์ 3 | LeetCode Easy ต่อ (เป้า: ครบ 20 ข้อ) | ⬜ |
 | 22-28 | สัปดาห์ 4 | LeetCode Easy ต่อ + เริ่ม Linked List | ⬜ |
 
@@ -189,7 +188,8 @@ github.com/[username]/
 | 2026-06-05 | - | LeetCode #6: First Unique Character | ✅ นับด้วย map แล้ววนหา count==1 |
 | 2026-06-06 | - | LeetCode #7: Palindrome Number | ✅ กลับเลขด้วยเลขคณิต (% และ /) |
 | 2026-06-10 | - | LeetCode #8: Fibonacci Number | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
-|  |  |  |  |
+| 2026-06-12 | - | LeetCode #9: FizzBuzz | ✅ if/else 4 กรณี + strconv.Itoa |
+| 2026-06-16 | - | LeetCode #10: Count Primes | ✅ isPrime function แยก + nested loop |
 
 ---
 
