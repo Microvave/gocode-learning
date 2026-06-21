@@ -1,7 +1,7 @@
 # แผนพัฒนาทักษะ Coding — เส้นทางสู่ Google & Agoda
 
-> **อัปเดตล่าสุด:** 2026-06-18
-> **สถานะปัจจุบัน:** เดือน 1 — LeetCode Easy 10/50 ✅
+> **อัปเดตล่าสุด:** 2026-06-21
+> **สถานะปัจจุบัน:** เดือน 1 — LeetCode Easy 11/50
 
 ---
 
@@ -190,12 +190,13 @@ github.com/[username]/
 | 2026-06-10 | - | LeetCode #8: Fibonacci Number | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
 | 2026-06-12 | - | LeetCode #9: FizzBuzz | ✅ if/else 4 กรณี + strconv.Itoa |
 | 2026-06-16 | - | LeetCode #10: Count Primes | ✅ isPrime function แยก + nested loop |
+| 2026-06-21 | - | LeetCode #11: Climbing Stairs | ✅ Loop DP เหมือน Fibonacci (a,b=b,a+b) |
 
 ---
 
 ## LeetCode Tracker
 
-### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 10/50
+### Easy (เป้า 50 ข้อ) — ทำไปแล้ว: 11/50
 
 | # | ชื่อข้อ | วันที่ | หมายเหตุ |
 |---|---------|--------|----------|
@@ -209,6 +210,7 @@ github.com/[username]/
 | 8 | Fibonacci Number | 2026-06-10 | ✅ loop จำ 2 ตัวล่าสุด (a,b=b,a+b) |
 | 9 | FizzBuzz | 2026-06-12 | ✅ if/else 4 กรณี + strconv.Itoa |
 | 10 | Count Primes | 2026-06-16 | ✅ isPrime function + nested loop |
+| 11 | Climbing Stairs | 2026-06-21 | ✅ Loop DP เหมือน Fibonacci |
 
 ### Medium (เป้า 80 ข้อ) — ทำไปแล้ว: 0/80
 
